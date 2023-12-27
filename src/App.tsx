@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+
+import { Pagination } from "./components/Pagination";
+
 import { AlbumType } from "./types/album.type";
 
 const API_URL = "https://jsonplaceholder.typicode.com/albums/1/photos";
@@ -15,7 +18,11 @@ function App() {
     getAlbums();
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <Pagination />
+    </div>
+  );
 }
 
 export default App;
