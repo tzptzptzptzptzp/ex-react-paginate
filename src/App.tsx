@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { AlbumType } from "./types/album.type";
 
 const API_URL = "https://jsonplaceholder.typicode.com/albums/1/photos";
