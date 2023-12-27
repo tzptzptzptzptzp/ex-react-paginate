@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
+import { AlbumType } from "./types/album.type";
+
+const API_URL = "https://jsonplaceholder.typicode.com/albums/1/photos";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [albums, setAlbums] = useState<AlbumType[]>([]);
+
+  useEffect(() => {
+    const getAlbums = async () => {
+      await fetch(API_URL)
+        .then((res) => res.json())
+        .then((album) => setAlbums(album));
+    };
+    getAlbums();
+  }, []);
 
   return <div></div>;
 }
